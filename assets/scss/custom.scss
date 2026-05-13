@@ -2,6 +2,47 @@
 // 花园美学 - 艺术风格样式
 // ==============================
 
+// ---------- 二次元背景叠加层 ----------
+#anime-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
+
+  &::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(254, 249, 241, 0.8) 0%,
+      rgba(254, 249, 241, 0.7) 50%,
+      rgba(254, 249, 241, 0.8) 100%
+    );
+  }
+}
+
+[data-theme="dark"] #anime-bg::after {
+  background: linear-gradient(
+    180deg,
+    rgba(27, 28, 46, 0.8) 0%,
+    rgba(27, 28, 46, 0.7) 50%,
+    rgba(27, 28, 46, 0.8) 100%
+  );
+}
+
 // ---------- 全局氛围 ----------
 body {
   background-image:
