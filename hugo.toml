@@ -27,6 +27,19 @@ hasCJKLanguage = true
   [params.profileMode]
     enabled = false
 
+  [params.giscus]
+    repo = "lxfight/myblog"
+    repoID = "R_kgDOSb8nbw"
+    category = "General"
+    categoryID = "DIC_kwDOSb8nb84C86-W"
+    mapping = "pathname"
+    strict = "0"
+    reactionsEnabled = "1"
+    emitMetadata = "0"
+    inputPosition = "bottom"
+    theme = "preferred_color_scheme"
+    lang = "zh-CN"
+
 [taxonomies]
   category = "categories"
   tag = "tags"
