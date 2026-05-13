@@ -1,0 +1,48 @@
+baseURL = "https://blog.lxfight.top/"
+locale = "zh-cn"
+title = "lxfight 的小花园"
+theme = "PaperMod"
+paginate = 8
+enableRobotsTXT = true
+hasCJKLanguage = true
+
+[params]
+  defaultTheme = "auto"
+  author = "lxfight"
+  description = "记录技术、生活和想法"
+  ShowReadingTime = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowToc = true
+  ShowRssButtonInSectionTermList = true
+  ShowFullTextinRSS = true
+
+  [params.homeInfoParams]
+    Title = "欢迎来到 lxfight 的小花园"
+    Content = "记录技术、生活和想法"
+
+  [params.profileMode]
+    enabled = false
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "文章"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    name = "标签"
+    url = "/tags/"
+    weight = 2
+  [[menu.main]]
+    identifier = "about"
+    name = "关于"
+    url = "/about/"
+    weight = 3
