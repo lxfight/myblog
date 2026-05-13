@@ -1,44 +1,91 @@
 baseURL = "https://blog.lxfight.top/"
-locale = "zh-cn"
+languageCode = "zh-cn"
 title = "lxfight 的小花园"
-theme = "PaperMod"
-[pagination]
-  pagerSize = 8
+theme = "FixIt"
 enableRobotsTXT = true
 hasCJKLanguage = true
 
+[pagination]
+  pagerSize = 8
+
 [params]
-  defaultTheme = "auto"
-  author = "lxfight"
+  version = "0.3.X"
   description = "记录技术、生活和想法"
-  ShowReadingTime = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  ShowShareButtons = true
-  ShowPostNavLinks = true
-  ShowToc = true
-  ShowRssButtonInSectionTermList = true
-  ShowFullTextinRSS = true
+  keywords = ["博客", "技术", "生活"]
 
-  [params.homeInfoParams]
-    Title = "欢迎来到 lxfight 的小花园"
-    Content = "记录技术、生活和想法"
+  [params.author]
+    name = "lxfight"
 
-  [params.profileMode]
-    enabled = false
+  [params.appearance]
+    theme = "auto"
 
-  [params.giscus]
-    repo = "lxfight/myblog"
-    repoID = "R_kgDOSb8nbw"
-    category = "General"
-    categoryID = "DIC_kwDOSb8nb84C86-W"
-    mapping = "pathname"
-    strict = "0"
-    reactionsEnabled = "1"
-    emitMetadata = "0"
-    inputPosition = "bottom"
-    theme = "preferred_color_scheme"
-    lang = "zh-CN"
+  [params.header]
+    desktopMode = "sticky"
+    mobileMode = "auto"
+    [params.header.title]
+      logo = ""
+      name = "lxfight 的小花园"
+      pre = "🌸 "
+      post = ""
+      typeit = true
+    [params.header.subtitle]
+      name = "记录技术、生活和想法"
+      typeit = true
+
+  [params.home]
+    paginate = 8
+    [params.home.profile]
+      enable = true
+      gravatarEmail = ""
+      avatarURL = ""
+      title = "欢迎来到 lxfight 的小花园 🌸"
+      subtitle = "分享技术、记录生活、留住灵感"
+      typeit = true
+      social = true
+    [params.home.posts]
+      enable = true
+      paginate = 6
+
+  [params.social]
+    GitHub = "lxfight"
+
+  [params.footer]
+    enable = true
+    copyright = true
+    author = true
+    since = "2026"
+    [params.footer.powered]
+      enable = true
+      hugoLogo = true
+      themeLogo = true
+
+  [params.page]
+    lightgallery = true
+    readingTime = true
+    wordCount = true
+    linkToMarkdown = false
+    [params.page.toc]
+      enable = true
+      auto = true
+      position = "right"
+      startLevel = 2
+      endLevel = 4
+
+    [params.page.comment]
+      enable = true
+      [params.page.comment.giscus]
+        enable = true
+        repo = "lxfight/myblog"
+        repoId = "R_kgDOSb8nbw"
+        category = "General"
+        categoryId = "DIC_kwDOSb8nb84C86-W"
+        mapping = "pathname"
+        strict = "0"
+        reactionsEnabled = "1"
+        emitMetadata = "0"
+        inputPosition = "bottom"
+        lightTheme = "light"
+        darkTheme = "dark"
 
 [taxonomies]
   category = "categories"

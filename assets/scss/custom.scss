@@ -1,0 +1,355 @@
+// ==============================
+// 花园美学 - 艺术风格样式
+// ==============================
+
+// ---------- 全局氛围 ----------
+body {
+  background-image:
+    radial-gradient(ellipse at 20% 20%, rgba(107, 144, 128, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(196, 69, 105, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(201, 169, 110, 0.03) 0%, transparent 70%);
+}
+
+[data-theme="dark"] body {
+  background-image:
+    radial-gradient(ellipse at 20% 20%, rgba(163, 196, 176, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(224, 145, 138, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(201, 169, 110, 0.04) 0%, transparent 70%);
+}
+
+// ---------- 首页欢迎区域 ----------
+.home-profile {
+  position: relative;
+  text-align: center;
+  padding: 3.5rem 2rem 2.5rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  border-radius: 20px;
+  background: linear-gradient(135deg,
+    rgba(254, 249, 241, 0.9) 0%,
+    rgba(250, 245, 237, 0.95) 40%,
+    rgba(245, 235, 220, 0.9) 100%);
+  box-shadow:
+    0 2px 20px rgba(107, 144, 128, 0.06),
+    0 8px 40px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(196, 69, 105, 0.08);
+  overflow: hidden;
+
+  &::before {
+    content: "🌸";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      #c44569 20%,
+      #6b9080 50%,
+      #c9a96e 80%,
+      transparent 100%);
+  }
+}
+
+[data-theme="dark"] .home-profile {
+  background: linear-gradient(135deg,
+    rgba(27, 28, 46, 0.95) 0%,
+    rgba(34, 35, 56, 0.95) 40%,
+    rgba(28, 29, 48, 0.95) 100%);
+  border-color: rgba(224, 145, 138, 0.1);
+  box-shadow:
+    0 2px 20px rgba(0, 0, 0, 0.3),
+    0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+
+// ---------- 文章卡片 ----------
+.post-entry {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 1.75rem 2rem;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid #e5dcd0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 4px 12px rgba(107, 144, 128, 0.08),
+      0 12px 40px rgba(0, 0, 0, 0.06);
+    border-color: rgba(107, 144, 128, 0.3);
+
+    .post-title {
+      color: #c44569;
+    }
+  }
+
+  .post-title {
+    transition: color 0.3s ease;
+    font-family: "Noto Serif SC", "STSong", Georgia, serif;
+    font-weight: 600;
+  }
+}
+
+[data-theme="dark"] .post-entry {
+  background: #222338;
+  border-color: #2d2e40;
+
+  &:hover {
+    border-color: rgba(224, 145, 138, 0.3);
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.3),
+      0 12px 40px rgba(0, 0, 0, 0.25);
+
+    .post-title {
+      color: #e0918a;
+    }
+  }
+}
+
+// ---------- 页头美化 ----------
+.header {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(196, 69, 105, 0.1);
+}
+
+[data-theme="dark"] .header {
+  border-bottom-color: rgba(224, 145, 138, 0.1);
+}
+
+// ---------- 单篇文章 ----------
+.single-title {
+  font-family: "Noto Serif SC", "STSong", Georgia, serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #c44569, #6b9080, #c9a96e);
+  }
+}
+
+// ---------- 引用块艺术化 ----------
+blockquote {
+  position: relative;
+  margin: 2rem 0;
+  padding: 1.5rem 2rem 1.5rem 3rem;
+  background: linear-gradient(135deg, #faf5ed 0%, #f6f0e6 100%);
+  border: none;
+  border-left: 4px solid #6b9080;
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+  color: #5a4e3e;
+
+  &::before {
+    content: "❝";
+    position: absolute;
+    left: 0.8rem;
+    top: 0.5rem;
+    font-size: 1.5rem;
+    color: #6b9080;
+    font-style: normal;
+    opacity: 0.6;
+  }
+}
+
+[data-theme="dark"] blockquote {
+  background: linear-gradient(135deg, #252638 0%, #222338 100%);
+  border-left-color: #a3c4b0;
+  color: #c5b9a5;
+
+  &::before {
+    color: #a3c4b0;
+  }
+}
+
+// ---------- 代码块 ----------
+.highlight {
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+
+  pre {
+    border-radius: 0 0 12px 12px;
+  }
+}
+
+[data-theme="dark"] .highlight {
+  box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+}
+
+// ---------- 内联代码 ----------
+:not(pre) > code {
+  color: #c44569;
+  background: rgba(196, 69, 105, 0.07);
+  border-radius: 5px;
+  padding: 0.15em 0.4em;
+  font-size: 0.9em;
+}
+
+[data-theme="dark"] :not(pre) > code {
+  color: #e0918a;
+  background: rgba(224, 145, 138, 0.1);
+}
+
+// ---------- 标签云 ----------
+.tag-cloud-tags a {
+  display: inline-block;
+  margin: 0.3rem;
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #6b9080, #7bae9a);
+  color: #fff !important;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(107, 144, 128, 0.2);
+
+  &:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 16px rgba(107, 144, 128, 0.35);
+    color: #fff !important;
+  }
+}
+
+// ---------- 目录 (TOC) ----------
+.toc {
+  border-left: 3px solid #e5dcd0;
+  padding-left: 1rem;
+
+  a {
+    color: #6b6356;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: #c44569;
+      padding-left: 0.3rem;
+    }
+  }
+}
+
+[data-theme="dark"] .toc {
+  border-left-color: #353650;
+
+  a:hover {
+    color: #e0918a;
+  }
+}
+
+// ---------- 分割线 ----------
+hr {
+  height: 2px;
+  border: none;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    #e5dcd0 10%,
+    #d5cbb8 50%,
+    #e5dcd0 90%,
+    transparent 100%);
+  margin: 3rem 0;
+}
+
+[data-theme="dark"] hr {
+  background: linear-gradient(90deg,
+    transparent 0%,
+    #353650 10%,
+    #4a4b5e 50%,
+    #353650 90%,
+    transparent 100%);
+}
+
+// ---------- 页脚 ----------
+.footer {
+  border-top: 1px solid #e5dcd0;
+  font-size: 0.85rem;
+  color: #b0a590;
+
+  a {
+    color: #6b9080;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #c44569;
+    }
+  }
+}
+
+[data-theme="dark"] .footer {
+  border-top-color: #2d2e40;
+  color: #6b6356;
+
+  a {
+    color: #a3c4b0;
+
+    &:hover {
+      color: #e0918a;
+    }
+  }
+}
+
+// ---------- 滚动条 ----------
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fef9f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #d5cbb8;
+  border-radius: 4px;
+  &:hover {
+    background: #b0a590;
+  }
+}
+[data-theme="dark"] {
+  ::-webkit-scrollbar-track {
+    background: #1b1c2e;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3d3e50;
+    &:hover {
+      background: #555670;
+    }
+  }
+}
+
+// ---------- 选中文字 ----------
+::selection {
+  background: rgba(196, 69, 105, 0.15);
+  color: #3d3529;
+}
+[data-theme="dark"] ::selection {
+  background: rgba(224, 145, 138, 0.2);
+  color: #e8e0d5;
+}
+
+// ---------- 平滑过渡 ----------
+a, button, input, select, textarea {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}

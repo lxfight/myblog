@@ -1,0 +1,123 @@
+// ==============================
+// 花园美学 - 变量覆盖
+// ==============================
+@forward "core/maps";
+@use "sass:color";
+
+// 前缀
+$prefix: fi- !default;
+$rootPrefix: --fi- !default;
+
+// 字体
+$global-font-family: "Noto Serif SC", "Source Han Serif SC", "STSong", Georgia, "Times New Roman", serif, system-ui, -apple-system, sans-serif !default;
+$global-font-size: 17px !default;
+$global-font-weight: 400 !default;
+$global-line-height: 1.7rem !default;
+$global-border-radius: 10px !default;
+
+// 浅色主题
+$global-background-color: #fef9f1 !default;
+$global-font-color: #3d3529 !default;
+$global-font-secondary-color: #8b7e6a !default;
+$global-font-tertiary-color: #b0a590 !default;
+$global-link-color: #4a3728 !default;
+$global-link-hover-color: #c44569 !default;
+$global-border-color: #e5dcd0 !default;
+
+// 深色主题
+$global-background-color-dark: #1b1c2e !default;
+$global-font-color-dark: #e8e0d5 !default;
+$global-font-secondary-color-dark: #9e9483 !default;
+$global-font-tertiary-color-dark: #6b6356 !default;
+$global-link-color-dark: #e8e0d5 !default;
+$global-link-hover-color-dark: #e0918a !default;
+$global-border-color-dark: #2d2e40 !default;
+
+// 选择色
+$selection-color: rgba(196, 69, 105, 0.15) !default;
+$selection-color-dark: rgba(224, 145, 138, 0.25) !default;
+
+// 头部
+$header-height: 3.5rem !default;
+$submenu-height: $header-height * 0.5 !default;
+$header-background-color: rgba(254, 249, 241, 0.85) !default;
+$header-background-color-dark: rgba(27, 28, 46, 0.85) !default;
+$header-title-font-family: "Noto Serif SC", "STSong", Georgia, serif !default;
+$header-title-font-size: 1.5rem !default;
+$menu-active-color: #c44569 !default;
+$menu-active-color-dark: #e0918a !default;
+$menu-border-color: rgba(196, 69, 105, 0.08) !default;
+$menu-border-color-dark: rgba(224, 145, 138, 0.1) !default;
+$search-background-color: #f3ece2 !default;
+$search-background-color-dark: #252638 !default;
+
+// 单页链接
+$single-link-color: #6b9080 !default;
+$single-link-color-dark: #a3c4b0 !default;
+$single-link-hover-color: #c44569 !default;
+$single-link-hover-color-dark: #e0918a !default;
+
+// 表格
+$table-background-color: #faf5ed !default;
+$table-background-color-dark: #222338 !default;
+$table-thead-color: #f0e8d8 !default;
+$table-thead-color-dark: #2a2b40 !default;
+$table-border-color: #e5dcd0 !default;
+$table-border-color-dark: #353650 !default;
+
+// 引用
+$blockquote-color: #6b9080 !default;
+$blockquote-color-dark: #a3c4b0 !default;
+
+// 代码
+$code-color: #4a3728 !default;
+$code-color-dark: #e8e0d5 !default;
+$code-background-color: #f6f0e6 !default;
+$code-background-color-dark: #252638 !default;
+$code-header-background-color: #ede4d5 !default;
+$code-header-background-color-dark: #1e1f32 !default;
+$code-highlight-color: #fff2b8 !default;
+$code-highlight-color-dark: rgba(201, 169, 110, 0.25) !default;
+
+// 标签云
+$tag-cloud-start: #3d3529 !default;
+$tag-cloud-end: #6b9080 !default;
+$tag-cloud-start-dark: #e8e0d5 !default;
+$tag-cloud-end-dark: #e0918a !default;
+
+// 分页
+$pagination-link-color: #b0a590 !default;
+$pagination-link-hover-color: #c44569 !default;
+$pagination-link-color-dark: #6b6356 !default;
+$pagination-link-hover-color-dark: #e0918a !default;
+
+// 滚动条
+$scrollbar-color: #d5cbb8 !default;
+$scrollbar-hover-color: #b0a590 !default;
+
+// 内容排版
+$toc-title-font-size: 1rem !default;
+$toc-content-font-size: 0.875rem !default;
+$collection-title-font-size: 1rem !default;
+$collection-list-font-size: 0.875rem !default;
+$related-title-font-size: 1rem !default;
+$related-list-font-size: 0.875rem !default;
+
+// 代码样式
+$code-error-color: #dc3545 !default;
+$code-font-size: 0.875em !default;
+$code-block-font-size: 0.875rem !default;
+$code-font-family: "Source Code Pro", "Cascadia Code", Menlo, Consolas, Monaco, monospace, $global-font-family !default;
+$code-header-color: #70808f !default;
+$code-header-color-dark: #99a7b5 !default;
+
+// 打赏
+$reward-color: #c44569 !default;
+$reward-color-dark: #e0918a !default;
+$reward-img-width: 180px !default;
+
+// GitHub 角标
+$github-corner-color: white !default;
+$github-corner-color-dark: black !default;
+$github-corner-fill: $global-background-color-dark !default;
+$github-corner-fill-dark: $global-background-color !default;
