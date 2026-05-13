@@ -75,6 +75,8 @@ hasCJKLanguage = true
       enable = true
       [params.page.comment.giscus]
         enable = true
+        origin = "https://giscus.app"
+        lang = "zh-CN"
         repo = "lxfight/myblog"
         repoId = "R_kgDOSb8nbw"
         category = "General"
