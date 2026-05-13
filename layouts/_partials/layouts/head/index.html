@@ -77,18 +77,25 @@
 {{/* [todo] 先判断有图片资源时才加载，没有时提示引导 https://realfavicongenerator.net/  */}}
 {{- if not .Site.Params.app.noFavicon -}}
   {{- $relURL := relURL "" -}}
+  <link rel="icon" type="image/x-icon" href="{{ $relURL }}favicon.ico" />
   {{- with .Site.Params.app.svgFavicon -}}
     <link rel="icon" href="{{ . }}">
-  {{- else -}}
-    <link rel="shortcut icon" type="image/x-icon" href="{{ $relURL }}favicon.ico" />
+  {{- end -}}
+  {{- if or (fileExists "static/favicon-32x32.png") (fileExists "themes/FixIt/static/favicon-32x32.png") -}}
     <link rel="icon" type="image/png" sizes="32x32" href="{{ $relURL }}favicon-32x32.png">
+  {{- end -}}
+  {{- if or (fileExists "static/favicon-16x16.png") (fileExists "themes/FixIt/static/favicon-16x16.png") -}}
     <link rel="icon" type="image/png" sizes="16x16" href="{{ $relURL }}favicon-16x16.png">
   {{- end -}}
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ $relURL }}apple-touch-icon.png">
-  {{- with .Site.Params.app.iconColor -}}
-    <link rel="mask-icon" href="{{ $relURL }}safari-pinned-tab.svg" color="{{ . }}">
+  {{- if or (fileExists "static/apple-touch-icon.png") (fileExists "themes/FixIt/static/apple-touch-icon.png") -}}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ $relURL }}apple-touch-icon.png">
   {{- end -}}
-  {{- if eq .Site.Params.enablePWA true -}}
+  {{- with .Site.Params.app.iconColor -}}
+    {{- if or (fileExists "static/safari-pinned-tab.svg") (fileExists "themes/FixIt/static/safari-pinned-tab.svg") -}}
+      <link rel="mask-icon" href="{{ $relURL }}safari-pinned-tab.svg" color="{{ . }}">
+    {{- end -}}
+  {{- end -}}
+  {{- if and (eq .Site.Params.enablePWA true) (or (fileExists "static/site.webmanifest") (fileExists "themes/FixIt/static/site.webmanifest")) -}}
     <link rel="manifest" href="{{ $relURL }}site.webmanifest">
   {{- end -}}
 {{- end -}}
