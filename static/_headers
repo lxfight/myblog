@@ -1,0 +1,11 @@
+/index.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
+/posts/index.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
+/categories/index.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
+/tags/index.xml
+  Content-Type: application/rss+xml; charset=utf-8
