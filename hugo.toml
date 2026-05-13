@@ -2,7 +2,8 @@ baseURL = "https://blog.lxfight.top/"
 locale = "zh-cn"
 title = "lxfight 的小花园"
 theme = "PaperMod"
-paginate = 8
+[pagination]
+  pagerSize = 8
 enableRobotsTXT = true
 hasCJKLanguage = true
 
