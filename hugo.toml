@@ -74,21 +74,16 @@ hasCJKLanguage = true
     [params.page.comment]
       enable = true
       [params.page.comment.giscus]
+        enable = false
+      [params.page.comment.waline]
+        enable = false
+      [params.page.comment.twikoo]
         enable = true
-        origin = "https://giscus.app"
-        lang = "zh-CN"
-        repo = "lxfight/myblog"
-        repoId = "R_kgDOSb8nbw"
-        category = "General"
-        categoryId = "DIC_kwDOSb8nb84C86-W"
-        mapping = "pathname"
-        strict = "0"
-        reactionsEnabled = "1"
-        emitMetadata = "0"
-        inputPosition = "bottom"
-        lazyLoad = false
-        lightTheme = "light"
-        darkTheme = "dark"
+        envId = "https://twikoo.lxfight.top/"
+        visitor = true
+        commentCount = true
+        lightgallery = false
+        katex = false
 
 [taxonomies]
   category = "categories"
