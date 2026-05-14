@@ -86,6 +86,7 @@ hasCJKLanguage = true
         reactionsEnabled = "1"
         emitMetadata = "0"
         inputPosition = "bottom"
+        lazyLoad = false
         lightTheme = "light"
         darkTheme = "dark"
 
