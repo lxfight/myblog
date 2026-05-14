@@ -119,6 +119,17 @@
   <link rel="alternate" type="application/feed+json" href="{{ .Permalink }}" title="{{ $title }}" />
 {{- end -}}
 
+{{- /* Warm up giscus connection early to reduce initial DNS/TCP/TLS delay */ -}}
+{{- $giscus := .Site.Params.page.comment.giscus | default dict -}}
+{{- if and .Site.Params.page.comment.enable $giscus.enable -}}
+  {{- $giscusOrigin := $giscus.origin | default "https://giscus.app" | strings.TrimSuffix "/" -}}
+  {{- $giscusHost := (urls.Parse $giscusOrigin).Host -}}
+  <link rel="dns-prefetch" href="//{{ $giscusHost }}">
+  <link rel="preconnect" href="{{ $giscusOrigin }}" crossorigin>
+  <link rel="preload" href="{{ printf "%s/client.js" $giscusOrigin }}" as="script" crossorigin>
+  <link rel="preload" href="{{ printf "%s/default.css" $giscusOrigin }}" as="style" crossorigin>
+{{- end -}}
+
 {{- /* Core stylesheets (precompiled) */ -}}
 <link rel="stylesheet" href="{{ "css/config.min.css" | relURL }}">
 <link rel="stylesheet" href="{{ "css/main.min.css" | relURL }}">
